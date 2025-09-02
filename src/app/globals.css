@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+:root {
+  --background: #004773;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* extend custom tokens */
+  --color-primary: hsl(142 76% 36%);
+  --color-secondary: hsl(220 17% 32%);
+  --radius-lg: 0.75rem;
+
+  --gradient-primary: linear-gradient(135deg, hsl(142 76% 36%), hsl(158 64% 52%));
+  --gradient-hero: linear-gradient(135deg,
+      hsl(220 26% 14%) 0%,
+      hsl(224 24% 16%) 50%,
+      hsl(142 76% 36% / 0.1) 100%);
+  --shadow-card: 0 8px 32px hsl(220 26% 14% / 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* body */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Animations */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated-bg {
+  background: linear-gradient(-45deg,
+      var(--background),
+      color-mix(in srgb, var(--background) 85%, var(--foreground)),
+      color-mix(in srgb, var(--background) 70%, white),
+      color-mix(in srgb, var(--background) 80%, black),
+      var(--background));
+  background-size: 600% 600%;
+  animation: gradient-shift 8s ease-in-out infinite;
+  position: relative;
+}
+
+.animated-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+  background-size: 20px 20px;
+  animation: texture-move 12s linear infinite;
+  pointer-events: none;
+}
+
+.texture-noise {
+  background-image:
+    radial-gradient(circle at 25% 25%, color-mix(in srgb, var(--background) 20%, white) 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, color-mix(in srgb, var(--background) 15%, black) 1px, transparent 1px);
+  background-size: 30px 30px, 50px 50px;
+  animation: noise-float 15s ease-in-out infinite;
+}
+
+.floating {
+  animation: floating 6s ease-in-out infinite;
+}
+
+.fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes floating {
+  0% {
+    transform: translate3d(0, 0px, 0);
+  }
+
+  50% {
+    transform: translate3d(0, 30px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0px, 0);
+  }
+}
+
+@keyframes texture-move {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(-10px, -10px);
+  }
+
+  50% {
+    transform: translate(5px, -5px);
+  }
+
+  75% {
+    transform: translate(-5px, 10px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes noise-float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translateY(-20px);
+    opacity: 0.8;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
