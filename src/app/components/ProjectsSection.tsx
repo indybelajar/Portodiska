@@ -31,6 +31,10 @@ export const ProjectsSection = () => {
       title: 'Hiphoria – Social Media Specialist',
       link: 'https://drive.google.com/drive/folders/1n3D4MZ71pU5LHJvRZlcNBsSxZBGTx-Ld?usp=sharing',
     },
+     {
+      title: 'Talent Manager',
+      link: 'https://drive.google.com/drive/folders/1VzQ2WqWAfRWjPuTLcuJ7dd_Cvy46cOQj',
+    },
   ];
 
   const ProjectCard = ({ project }: { project: typeof projects[0] }) => (
