@@ -52,10 +52,10 @@ export const HeroSection = () => {
             transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
             className="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex sm:justify-center"
           >
-            <a href="/cv_diska_2.pdf" download>
+            <a href="/cv_diska_2.pdf">
             <Button size="lg" className="glow-effect">
                 <Download className="mr-2 h-5 w-5" />
-                Download CV
+                Curiculum Vitae
             </Button>
             </a>
 
