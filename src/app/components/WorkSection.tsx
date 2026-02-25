@@ -44,6 +44,17 @@ export const WorkSection = () => {
       ],
      
     },
+        {
+      company: "Cool Panda",
+      role: "Talent Manager",
+      highlights: [
+        "Berhasil capai target bulanan (30.000+ diamonds & 20 host baru)",
+        "Melakukan rekrutmen dan scouting talent",
+        "Menyusun strategi & monitoring KPI",
+        "Mengelola, mengevaluasi, dan membina host untuk meningkatkan performa, engagement, dan revenue."
+      ],
+     
+    },
   ];
 
   return (

@@ -31,10 +31,15 @@ export const ProjectsSection = () => {
       title: 'Hiphoria – Social Media Specialist',
       link: 'https://drive.google.com/drive/folders/1n3D4MZ71pU5LHJvRZlcNBsSxZBGTx-Ld?usp=sharing',
     },
-     {
-      title: 'Talent Manager',
-      link: 'https://drive.google.com/drive/folders/1VzQ2WqWAfRWjPuTLcuJ7dd_Cvy46cOQj',
+    {
+      title: 'Naura Ayu - Lampu Jalan',
+      link: 'https://drive.google.com/drive/folders/1NDnM3lVngxj3qBrv-XVhIi6Ejiavj2_N',
     },
+    {
+      title: 'Afgan - Sampai Jumpa',
+      link: 'https://drive.google.com/drive/folders/1JhyO86B-c2-8QYXdnDgBqTKutOgz-fKN',
+    },
+  
   ];
 
   const ProjectCard = ({ project }: { project: typeof projects[0] }) => (

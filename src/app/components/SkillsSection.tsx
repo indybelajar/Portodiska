@@ -33,6 +33,7 @@ export const SkillsSection = () => {
         'PicsArt',
         'Meta Business Suite',
         'TikTok Creator Tools',
+        'Backstage'
       ],
     },
   ];
